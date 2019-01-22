@@ -1,0 +1,120 @@
+﻿.alert-timeout {
+	position: fixed;
+	bottom: 5px;
+	left: 2%;
+	width: 96%;
+}
+
+.alert-hidden {
+	display: none;
+}
+
+
+.navbar {
+	background-color: #1A331C;
+	color: #FFFFFF;
+}
+
+.jumbotron {
+	background-color: #1A331C;
+	color: #FFFFFF;
+}
+
+.jumbotron h1 {
+	color: #FFCD05;
+}
+
+.jumbotron .btn-primary {
+	color: #333333;
+	background-color: #FFCD05;
+	border-color: #FFCD05;
+}
+
+.jumbotron .btn-primary:focus,
+.jumbotron .btn-primary.focus {
+	color: #000000;
+	background-color: #FFCD05;
+	border-color: #FFCD05;
+}
+
+.jumbotron .btn-primary:hover {
+	color: #000000;
+	background-color: #FF9900;
+	border-color: #FF9900;
+}
+
+.jumbotron .btn-primary:active,
+.jumbotron .btn-primary.active,
+.jumbotron .open > .dropdown-toggle.btn-primary {
+	color: #999999;
+	background-color: #FFCD05;
+	border-color: #EEEEEE;
+}
+
+.navbar-inverse {
+	background-color: #1A331C; /* Racing Green */
+	border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #FFCD05; /* Yellow */
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+	color: #fff;
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-text {
+	color: #EEEEEE;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #EEEEEE;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+	color: #fff;
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+	color: #fff;
+	background-color: #080808;
+}
+
+.navbar-inverse .navbar-nav > .disabled > a,
+.navbar-inverse .navbar-nav > .disabled > a:hover,
+.navbar-inverse .navbar-nav > .disabled > a:focus {
+	color: #444;
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: #333;
+}
+
+	.navbar-inverse .navbar-toggle:hover,
+	.navbar-inverse .navbar-toggle:focus {
+		background-color: #333;
+	}
+
+	.navbar-inverse .navbar-toggle .icon-bar {
+		background-color: #fff;
+	}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+	border-color: #101010;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+	color: #fff;
+	background-color: #080808;
+}

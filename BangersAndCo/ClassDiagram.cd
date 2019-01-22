@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BangersAndCo.Admin.ManageUserList">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAQCAAAAAAAAAAAAAABAAAAAIAAQCAAIAIFCAQ=</HashCode>
+      <FileName>Admin\ManageUserList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Admin.ManageUserView">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAACQAAIACAAAAAAIBAAA=</HashCode>
+      <FileName>Admin\ManageUserView.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Admin.RegisterUser">
+    <Position X="6.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAgAIAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Admin\RegisterUser.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Management.BookingList">
+    <Position X="0.5" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gEAAAEACSAEgAAAAAABQAAABAAAABACCEEEASAKhAEI=</HashCode>
+      <FileName>Management\BookingList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Management.BookingView">
+    <Position X="3.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAAAQAAEAAAgCCgACAAABCBABAAAAABAAsFQAg=</HashCode>
+      <FileName>Management\BookingView.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Management.DriverList">
+    <Position X="9" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAACgAAAQAAAAAAABAhQCAAAAACBAAAEgIBQAI=</HashCode>
+      <FileName>Management\DriverList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.Management.DriverView">
+    <Position X="6.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAAQAAAAAQAAAEACAQAAAAAAAAAAAAAQAIBAAA=</HashCode>
+      <FileName>Management\DriverView.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.RegisteredUser.BookingList">
+    <Position X="0.5" Y="11.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAQAIBAAA=</HashCode>
+      <FileName>RegisteredUser\BookingList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.RegisteredUser.BookingView">
+    <Position X="3.5" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAAIAAAQAAEAAAgCAgACAAABCBABAAAAABAAsFAAg=</HashCode>
+      <FileName>RegisteredUser\BookingView.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.RegisteredUser.DriverRegistration">
+    <Position X="6.25" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAQAAAAAQAAAEACAQAAAAAAAAAAAAAQAIBAAA=</HashCode>
+      <FileName>RegisteredUser\DriverRegistration.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.BookingsTableAdapter">
+    <Position X="16.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UAGAAHAAEAAAgAcgYgAAAAAAACAICQgBAAAAAAAABDA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.DriversTableAdapter">
+    <Position X="21.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UASAAHAAEAAAgAcAYAAAAAAAACEICQABAAAAAIAABDA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.VehiclesTableAdapter">
+    <Position X="18.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UACAAHAAECAAiAcAYgAAAAQAACEICQAAAAAAAAAABDA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.VehicleTypesTableAdapter">
+    <Position X="23.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UASAAHAAEAAAgAcAYAAAAAAAACEICQABAAAAAAAABDA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.UsersAndRolesTableAdapter">
+    <Position X="18.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>eACAgGAAAAAAAEcAoASgAAEAACAICAABGEAACgAAFJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.RolesTableAdapter">
+    <Position X="21.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.UserRolesTableAdapter">
+    <Position X="16.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>UASAAGAAEAAAAAcAYAAAAAEAACEICAABEAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangersAndCo.DataAccessLayerTableAdapters.TableAdapterManager">
+    <Position X="13" Y="4" Width="2.5" />
+    <NestedTypes>
+      <Enum Name="BangersAndCo.DataAccessLayerTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="BangersAndCo.DataAccessLayerTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAASAAIAFABAEFgAAAsAAgAAACgAAAAQQAAAAEBAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

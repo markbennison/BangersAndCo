@@ -1,0 +1,1362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataAccessLayer" targetNamespace="http://tempuri.org/DataAccessLayer.xsd" xmlns:mstns="http://tempuri.org/DataAccessLayer.xsd" xmlns="http://tempuri.org/DataAccessLayer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="aspnet_BangersAndCo_20190102034917ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BangersAndCo.Properties.Settings.GlobalReference.Default.aspnet_BangersAndCo_20190102034917ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookingsTableAdapter" GeneratorDataComponentClassName="BookingsTableAdapter" Name="Bookings" UserDataComponentName="BookingsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Bookings.Id, Bookings.UserId, AspNetUsers.UserName, Bookings.VehicleId, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType, Bookings.DateTimeFrom, Bookings.DateTimeDue, Bookings.DateTimePickup, Bookings.DateTimeReturn, Bookings.Status, Bookings.DailyRateCharged
+FROM		Bookings 
+INNER JOIN	Vehicles ON Bookings.VehicleId = Vehicles.Id 
+INNER JOIN	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id 
+INNER JOIN	AspNetUsers ON Bookings.UserId = AspNetUsers.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="VehicleId" DataSetColumn="VehicleId" />
+              <Mapping SourceColumn="DateTimeFrom" DataSetColumn="DateTimeFrom" />
+              <Mapping SourceColumn="DateTimeDue" DataSetColumn="DateTimeDue" />
+              <Mapping SourceColumn="DateTimePickup" DataSetColumn="DateTimePickup" />
+              <Mapping SourceColumn="DateTimeReturn" DataSetColumn="DateTimeReturn" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="DailyRateCharged" DataSetColumn="DailyRateCharged" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="RegistrationPlate" DataSetColumn="RegistrationPlate" />
+              <Mapping SourceColumn="VehicleTypeId" DataSetColumn="VehicleTypeId" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DailyRate" DataSetColumn="DailyRate" />
+              <Mapping SourceColumn="MinimumAge" DataSetColumn="MinimumAge" />
+              <Mapping SourceColumn="Transmission" DataSetColumn="Transmission" />
+              <Mapping SourceColumn="FuelType" DataSetColumn="FuelType" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRecord" Modifier="Public" Name="DeleteRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteRecord">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM Bookings
+WHERE        (Id = @bookingid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="bookingid" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@bookingid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById" GeneratorSourceName="FillById" GetMethodModifier="Public" GetMethodName="GetDataById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById" UserSourceName="FillById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Bookings.Id, Bookings.UserId, AspNetUsers.UserName, Bookings.VehicleId, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType, Bookings.DateTimeFrom, Bookings.DateTimeDue, Bookings.DateTimePickup, Bookings.DateTimeReturn, Bookings.Status, Bookings.DailyRateCharged
+FROM		Bookings 
+INNER JOIN	Vehicles ON Bookings.VehicleId = Vehicles.Id 
+INNER JOIN	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id 
+INNER JOIN	AspNetUsers ON Bookings.UserId = AspNetUsers.Id
+WHERE		(Bookings.Id = @id) </CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameters" GeneratorSourceName="FillByParameters" GetMethodModifier="Public" GetMethodName="GetDataByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameters" UserSourceName="FillByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Bookings.Id, Bookings.UserId, AspNetUsers.UserName, Bookings.VehicleId, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType, Bookings.DateTimeFrom, Bookings.DateTimeDue, Bookings.DateTimePickup, Bookings.DateTimeReturn, Bookings.Status, Bookings.DailyRateCharged
+FROM		Bookings 
+INNER JOIN	Vehicles ON Bookings.VehicleId = Vehicles.Id 
+INNER JOIN	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id 
+INNER JOIN	AspNetUsers ON Bookings.UserId = AspNetUsers.Id
+WHERE		(Bookings.Id = @bookingid OR @bookingid IS NULL OR @bookingid &lt; 1) 
+AND 		(UserId LIKE '%' + @userid + '%' OR @userid IS NULL OR @userid = '')
+AND 		(VehicleId = @vehicleid OR @vehicleid IS NULL OR @vehicleid &lt; 1) 
+AND 		(DateTimeFrom BETWEEN @datetimefromstart AND @datetimefromend OR DateTimeFrom  IS NULL) 
+AND 		(DateTimeDue BETWEEN @datetimeduestart AND @datetimedueend OR DateTimeDue IS NULL) 
+AND 		(DateTimePickup BETWEEN @datetimepickupstart AND @datetimepickupend OR DateTimePickup IS NULL) 
+AND		(DateTimeReturn BETWEEN @datetimereturnstart AND @ddatetimereturnend OR DateTimeReturn IS NULL) 
+AND 		(Status LIKE '%' + @status + '%' OR @status IS NULL OR @status = '')
+AND 		(DailyRateCharged BETWEEN @dailyratechargedstart AND @dailyratechargedend)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="bookingid" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@bookingid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="vehicleid" ColumnName="VehicleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@vehicleid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="datetimefromstart" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimefromstart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="datetimefromend" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimefromend" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="datetimeduestart" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimeduestart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="datetimedueend" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimedueend" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="datetimepickupstart" ColumnName="DateTimePickup" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimepickupstart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimePickup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="datetimepickupend" ColumnName="DateTimePickup" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimepickupend" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimePickup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="datetimereturnstart" ColumnName="DateTimeReturn" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@datetimereturnstart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ddatetimereturnend" ColumnName="DateTimeReturn" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ddatetimereturnend" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="status" ColumnName="Status" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@status" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyratechargedstart" ColumnName="DailyRateCharged" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyratechargedstart" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRateCharged" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyratechargedend" ColumnName="DailyRateCharged" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyratechargedend" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRateCharged" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetCountOfComplete" Modifier="Public" Name="GetCountOfComplete" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetCountOfComplete">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(*) AS RecordCount
+FROM            Bookings
+WHERE        (Status = 'Complete') AND (UserId = @userid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetCountOfDidNotShow" Modifier="Public" Name="GetCountOfDidNotShow" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetCountOfDidNotShow">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(*) AS RecordCount
+FROM            Bookings
+WHERE        (Status = 'Did Not Show') AND (UserId = @userid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAvailability" GetMethodModifier="Public" GetMethodName="GetDataByAvailability" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAvailability" UserSourceName="GetDataByAvailability">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Bookings.Id, Bookings.UserId, AspNetUsers.UserName, Bookings.VehicleId, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, 
+                         Vehicles.Transmission, Vehicles.FuelType, Bookings.DateTimeFrom, Bookings.DateTimeDue, Bookings.DateTimePickup, Bookings.DateTimeReturn, Bookings.Status, Bookings.DailyRateCharged
+FROM            Bookings INNER JOIN
+                         Vehicles ON Bookings.VehicleId = Vehicles.Id INNER JOIN
+                         VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id INNER JOIN
+                         AspNetUsers ON Bookings.UserId = AspNetUsers.Id
+WHERE        (Bookings.VehicleId = @vehicleid OR @vehicleid IS NULL OR @vehicleid &lt; 1) 
+AND ((Bookings.DateTimeDue &lt; @wantedFrom) OR (Bookings.DateTimeFrom &gt; @wantedTo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="vehicleid" ColumnName="VehicleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@vehicleid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="wantedFrom" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@wantedFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="wantedTo" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@wantedTo" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserID" GetMethodModifier="Public" GetMethodName="GetDataByUserID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserID" UserSourceName="GetDataByUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Bookings.Id, Bookings.UserId, AspNetUsers.UserName, Bookings.VehicleId, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType, Bookings.DateTimeFrom, Bookings.DateTimeDue, Bookings.DateTimePickup, Bookings.DateTimeReturn, Bookings.Status, Bookings.DailyRateCharged
+FROM		Bookings 
+INNER JOIN	Vehicles ON Bookings.VehicleId = Vehicles.Id 
+INNER JOIN	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id 
+INNER JOIN	AspNetUsers ON Bookings.UserId = AspNetUsers.Id
+WHERE		(UserId LIKE '%' + @userid + '%' OR @userid IS NULL OR @userid = '')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertAndReturnID" Modifier="Public" Name="InsertAndReturnID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertAndReturnID">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Bookings
+                         (UserId, VehicleId, DateTimeFrom, DateTimeDue, DateTimePickup, DateTimeReturn, Status, DailyRateCharged)
+VALUES        (@UserId,@VehicleId,@DateTimeFrom,@DateTimeDue,@DateTimePickup,@DateTimeReturn,@Status,@DailyRateCharged);
+
+SELECT SCOPE_IDENTITY()</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VehicleId" ColumnName="VehicleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@VehicleId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeFrom" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeDue" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeDue" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimePickup" ColumnName="DateTimePickup" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimePickup" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimePickup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimeReturn" ColumnName="DateTimeReturn" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeReturn" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Status" ColumnName="Status" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DailyRateCharged" ColumnName="DailyRateCharged" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@DailyRateCharged" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRateCharged" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRecord" Modifier="Public" Name="InsertRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InsertRecord">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Bookings
+                         (UserId, VehicleId, DateTimeFrom, DateTimeDue, DateTimePickup, DateTimeReturn, Status, DailyRateCharged)
+VALUES        (@UserId,@VehicleId,@DateTimeFrom,@DateTimeDue,@DateTimePickup,@DateTimeReturn,@Status,@DailyRateCharged)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VehicleId" ColumnName="VehicleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@VehicleId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeFrom" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeDue" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeDue" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimePickup" ColumnName="DateTimePickup" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimePickup" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimePickup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimeReturn" ColumnName="DateTimeReturn" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeReturn" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Status" ColumnName="Status" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DailyRateCharged" ColumnName="DailyRateCharged" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@DailyRateCharged" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRateCharged" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       Bookings
+SET                UserId = @UserId, VehicleId = @VehicleId, DateTimeFrom = @DateTimeFrom, DateTimeDue = @DateTimeDue, DateTimePickup = @DateTimePickup, DateTimeReturn = @DateTimeReturn, Status = @Status, 
+                         DailyRateCharged = @DailyRateCharged
+WHERE        (Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VehicleId" ColumnName="VehicleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@VehicleId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeFrom" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTimeDue" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeDue" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimePickup" ColumnName="DateTimePickup" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimePickup" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimePickup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateTimeReturn" ColumnName="DateTimeReturn" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateTimeReturn" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Status" ColumnName="Status" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DailyRateCharged" ColumnName="DailyRateCharged" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@DailyRateCharged" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRateCharged" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DriversTableAdapter" GeneratorDataComponentClassName="DriversTableAdapter" Name="Drivers" UserDataComponentName="DriversTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.Drivers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Drivers] WHERE (([UserID] = @Original_UserID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Drivers] ([UserID], [Forename], [Surname], [DateOfBirth], [Address1], [Address2], [City], [County], [PostCode]) VALUES (@UserID, @Forename, @Surname, @DateOfBirth, @Address1, @Address2, @City, @County, @PostCode)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Forename" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateOfBirth" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Address1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Address2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@City" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@County" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PostCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 		UserID, Forename, Surname, DateOfBirth, Address1, Address2, City, County, PostCode 
+FROM 		dbo.Drivers</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Drivers] SET [UserID] = @UserID, [Forename] = @Forename, [Surname] = @Surname, [DateOfBirth] = @DateOfBirth, [Address1] = @Address1, [Address2] = @Address2, [City] = @City, [County] = @County, [PostCode] = @PostCode WHERE (([UserID] = @Original_UserID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Forename" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateOfBirth" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Address1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Address2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@City" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@County" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PostCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="Forename" DataSetColumn="Forename" />
+              <Mapping SourceColumn="Surname" DataSetColumn="Surname" />
+              <Mapping SourceColumn="DateOfBirth" DataSetColumn="DateOfBirth" />
+              <Mapping SourceColumn="Address1" DataSetColumn="Address1" />
+              <Mapping SourceColumn="Address2" DataSetColumn="Address2" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="County" DataSetColumn="County" />
+              <Mapping SourceColumn="PostCode" DataSetColumn="PostCode" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRecord" Modifier="Public" Name="DeleteRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteRecord">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [dbo].[Drivers] WHERE (([UserID] = @UserID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.Drivers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById" GeneratorSourceName="FillById" GetMethodModifier="Public" GetMethodName="GetDataById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById" UserSourceName="FillById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 		UserID, Forename, Surname, DateOfBirth, Address1, Address2, City, County, PostCode 
+FROM 		dbo.Drivers
+WHERE 		(UserID LIKE '%' + @userid + '%' OR @userid IS NULL OR @userid = '')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.Drivers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameters" GeneratorSourceName="FillByParameters" GetMethodModifier="Public" GetMethodName="GetDataByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameters" UserSourceName="FillByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Address1, Address2, City, County, DateOfBirth, Forename, PostCode, Surname, UserID FROM Drivers WHERE (UserID = @userid OR @userid IS NULL OR @userid = '') AND (Forename LIKE '%' + @forename + '%' OR @forename IS NULL OR @forename = '') AND (Surname LIKE '%' + @surname + '%' OR @surname IS NULL OR @surname = '') AND (DateOfBirth BETWEEN @dateofbirthstart AND @dateofbirthend) AND (Address1 LIKE '%' + @address1 + '%' OR @address1 IS NULL OR @address1 = '') AND (Address2 LIKE '%' + @address2 + '%' OR @address2 IS NULL OR @address2 = '') AND (City LIKE '%' + @city + '%' OR @city IS NULL OR @city = '') AND (County LIKE '%' + @county + '%' OR @county IS NULL OR @county = '') AND (PostCode LIKE '%' + @postcode + '%' OR @postcode IS NULL OR @postcode = '')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="forename" ColumnName="Forename" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@forename" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="surname" ColumnName="Surname" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@surname" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dateofbirthstart" ColumnName="DateOfBirth" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@dateofbirthstart" Precision="0" ProviderType="DateTime" Scale="0" Size="3" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dateofbirthend" ColumnName="DateOfBirth" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@dateofbirthend" Precision="0" ProviderType="DateTime" Scale="0" Size="3" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="address1" ColumnName="Address1" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@address1" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="address2" ColumnName="Address2" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@address2" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="city" ColumnName="City" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@city" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="county" ColumnName="County" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@county" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="postcode" ColumnName="PostCode" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@postcode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.Drivers" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBasics" GetMethodModifier="Public" GetMethodName="GetDataBasics" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBasics" UserSourceName="GetDataBasics">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserID, Forename + ' ' + Surname + ' (' + CONVERT(varchar, DateOfBirth, 106) + ')' AS Driver, Forename, Surname, DateOfBirth, Address1, Address2, City, County, PostCode
+FROM            Drivers
+ORDER BY Surname</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertAndReturnID" Modifier="Public" Name="InsertAndReturnID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertAndReturnID">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[Drivers] ([UserID], [Forename], [Surname], [DateOfBirth], [Address1], [Address2], [City], [County], [PostCode]) VALUES (@UserID, @Forename, @Surname, @DateOfBirth, @Address1, @Address2, @City, @County, @PostCode);
+
+SELECT SCOPE_IDENTITY()</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Forename" ColumnName="Forename" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Forename" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Surname" ColumnName="Surname" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateOfBirth" ColumnName="DateOfBirth" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@DateOfBirth" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Address1" ColumnName="Address1" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address1" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Address2" ColumnName="Address2" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address2" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="City" ColumnName="City" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@City" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="County" ColumnName="County" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@County" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PostCode" ColumnName="PostCode" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@PostCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRecord" Modifier="Public" Name="InsertRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertRecord">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[Drivers] ([UserID], [Forename], [Surname], [DateOfBirth], [Address1], [Address2], [City], [County], [PostCode]) VALUES (@UserID, @Forename, @Surname, @DateOfBirth, @Address1, @Address2, @City, @County, @PostCode)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Forename" ColumnName="Forename" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Forename" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Surname" ColumnName="Surname" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateOfBirth" ColumnName="DateOfBirth" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@DateOfBirth" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Address1" ColumnName="Address1" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address1" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Address2" ColumnName="Address2" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address2" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="City" ColumnName="City" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@City" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="County" ColumnName="County" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@County" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PostCode" ColumnName="PostCode" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@PostCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Drivers] SET [Forename] = @Forename, [Surname] = @Surname, [DateOfBirth] = @DateOfBirth, [Address1] = @Address1, [Address2] = @Address2, [City] = @City, [County] = @County, [PostCode] = @PostCode WHERE ([UserID] = @UserID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Forename" ColumnName="Forename" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Forename" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Forename" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Surname" ColumnName="Surname" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@Surname" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="Surname" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateOfBirth" ColumnName="DateOfBirth" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@DateOfBirth" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="DateOfBirth" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Address1" ColumnName="Address1" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address1" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Address2" ColumnName="Address2" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@Address2" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="Address2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="City" ColumnName="City" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@City" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="City" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="County" ColumnName="County" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(256)" DbType="AnsiString" Direction="Input" ParameterName="@County" Precision="0" ProviderType="VarChar" Scale="0" Size="256" SourceColumn="County" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PostCode" ColumnName="PostCode" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@PostCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="PostCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Drivers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VehiclesTableAdapter" GeneratorDataComponentClassName="VehiclesTableAdapter" Name="Vehicles" UserDataComponentName="VehiclesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Vehicles.Id, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType
+FROM		Vehicles 
+INNER JOIN 	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="RegistrationPlate" DataSetColumn="RegistrationPlate" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Transmission" DataSetColumn="Transmission" />
+              <Mapping SourceColumn="FuelType" DataSetColumn="FuelType" />
+              <Mapping SourceColumn="DailyRate" DataSetColumn="DailyRate" />
+              <Mapping SourceColumn="MinimumAge" DataSetColumn="MinimumAge" />
+              <Mapping SourceColumn="VehicleTypeId" DataSetColumn="VehicleTypeId" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM Vehicles
+WHERE        (Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById" GeneratorSourceName="FillById" GetMethodModifier="Public" GetMethodName="GetDataById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById" UserSourceName="FillById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Vehicles.Id, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType
+FROM		Vehicles 
+INNER JOIN 	VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id
+WHERE		(Vehicles.Id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameters" GeneratorSourceName="FillByParameters" GetMethodModifier="Public" GetMethodName="GetDataByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameters" UserSourceName="FillByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Vehicles.Id, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, VehicleTypes.Description, VehicleTypes.DailyRate, VehicleTypes.MinimumAge, Vehicles.Transmission, Vehicles.FuelType
+FROM            Vehicles INNER JOIN
+                         VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id
+WHERE        (Vehicles.Id = @id OR
+                         @id IS NULL OR
+                         @id &lt; 1) AND (Vehicles.RegistrationPlate LIKE '%' + @registrationplate + '%' OR
+                         @registrationplate IS NULL OR
+                         @registrationplate = '') AND (Vehicles.Transmission LIKE '%' + @tranmission + '%' OR
+                         @tranmission IS NULL OR
+                         @tranmission = '') AND (Vehicles.FuelType LIKE '%' + @fueltype + '%' OR
+                         @fueltype IS NULL OR
+                         @fueltype = '') AND (Vehicles.VehicleTypeId = @vehicletypeid OR
+                         @vehicletypeid IS NULL OR
+                         @vehicletypeid &lt; 1) AND (VehicleTypes.Description LIKE '%' + @description + '%' OR
+                         @description IS NULL OR
+                         @description = '') AND (VehicleTypes.DailyRate BETWEEN @dailyratestart AND @dailyrateend) AND (VehicleTypes.MinimumAge = @minimumage OR
+                         @minimumage IS NULL OR
+                         @minimumage &lt; 1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="registrationplate" ColumnName="RegistrationPlate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@registrationplate" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="RegistrationPlate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="tranmission" ColumnName="Transmission" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@tranmission" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Transmission" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="fueltype" ColumnName="FuelType" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@fueltype" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="FuelType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="vehicletypeid" ColumnName="VehicleTypeId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@vehicletypeid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleTypeId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="description" ColumnName="Description" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@description" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyratestart" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyratestart" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyrateend" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyrateend" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="minimumage" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@minimumage" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAboveAge" GetMethodModifier="Public" GetMethodName="GetDataAboveAge" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAboveAge" UserSourceName="GetDataAboveAge">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Vehicles.Id, ' (' + Vehicles.RegistrationPlate + ') ' + VehicleTypes.Description + ' | ' + Vehicles.Transmission + ' | ' + Vehicles.FuelType + ' ( £' + CONVERT(varchar(30), VehicleTypes.DailyRate, 1) + ' )' AS Details, 
+                         VehicleTypes.MinimumAge, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, Vehicles.Transmission, Vehicles.FuelType, VehicleTypes.Description, VehicleTypes.DailyRate
+FROM            Vehicles INNER JOIN
+                         VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id
+WHERE        (VehicleTypes.MinimumAge &lt;= @minimumAge)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="minimumAge" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@minimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAgeAndRange" GetMethodModifier="Public" GetMethodName="GetDataByAgeAndRange" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAgeAndRange" UserSourceName="GetDataByAgeAndRange">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         Vehicles.Id, ' (' + Vehicles.RegistrationPlate + ') ' + VehicleTypes.Description + ' | ' + Vehicles.Transmission + ' | ' + Vehicles.FuelType + ' ( £' + CONVERT(varchar(30), VehicleTypes.DailyRate, 1) + ' )' AS Details, 
+                         VehicleTypes.MinimumAge, Vehicles.RegistrationPlate, Vehicles.VehicleTypeId, Vehicles.Transmission, Vehicles.FuelType, VehicleTypes.Description, VehicleTypes.DailyRate
+FROM            Vehicles INNER JOIN
+                         VehicleTypes ON Vehicles.VehicleTypeId = VehicleTypes.Id LEFT OUTER JOIN
+                         Bookings ON Vehicles.Id = Bookings.VehicleId
+WHERE        (VehicleTypes.MinimumAge &lt;= @MinimumAge) AND (Bookings.DateTimeDue &lt; @wantedFrom) OR
+                         (VehicleTypes.MinimumAge &lt;= @MinimumAge) AND (Bookings.DateTimeFrom &gt; @wantedTo) OR
+                         (VehicleTypes.MinimumAge &lt;= @MinimumAge) AND (Bookings.DateTimeDue IS NULL) AND (Bookings.DateTimeFrom IS NULL) AND (Bookings.Id IS NULL) OR
+                         (Bookings.Id = @bookingid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MinimumAge" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@MinimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="wantedFrom" ColumnName="DateTimeDue" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@wantedFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="wantedTo" ColumnName="DateTimeFrom" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@wantedTo" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateTimeFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="bookingid" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Bookings" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@bookingid" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRecord" Modifier="Public" Name="InsertRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertRecord">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Vehicles
+                         (RegistrationPlate, VehicleTypeId, Transmission, FuelType)
+VALUES        (@RegistrationPlate,@VehicleTypeId,@Transmission,@FuelType)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="RegistrationPlate" ColumnName="RegistrationPlate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@RegistrationPlate" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="RegistrationPlate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VehicleTypeId" ColumnName="VehicleTypeId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@VehicleTypeId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleTypeId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Transmission" ColumnName="Transmission" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Transmission" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Transmission" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FuelType" ColumnName="FuelType" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@FuelType" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="FuelType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       Vehicles
+SET                RegistrationPlate = @RegistrationPlate, VehicleTypeId = @VehicleTypeId, Transmission = @Transmission, FuelType = @FuelType</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="RegistrationPlate" ColumnName="RegistrationPlate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@RegistrationPlate" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="RegistrationPlate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VehicleTypeId" ColumnName="VehicleTypeId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@VehicleTypeId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="VehicleTypeId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Transmission" ColumnName="Transmission" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Transmission" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Transmission" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FuelType" ColumnName="FuelType" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.Vehicles" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@FuelType" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="FuelType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VehicleTypesTableAdapter" GeneratorDataComponentClassName="VehicleTypesTableAdapter" Name="VehicleTypes" UserDataComponentName="VehicleTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.VehicleTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[VehicleTypes] WHERE (([Id] = @Original_Id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[VehicleTypes] ([Description], [DailyRate], [MinimumAge]) VALUES (@Description, @DailyRate, @MinimumAge)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@DailyRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@MinimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Description, DailyRate, MinimumAge FROM dbo.VehicleTypes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[VehicleTypes] SET [Description] = @Description, [DailyRate] = @DailyRate, [MinimumAge] = @MinimumAge WHERE (([Id] = @Original_Id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@DailyRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@MinimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DailyRate" DataSetColumn="DailyRate" />
+              <Mapping SourceColumn="MinimumAge" DataSetColumn="MinimumAge" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRecord" Modifier="Public" Name="DeleteRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteRecord">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [dbo].[VehicleTypes] WHERE (([Id] = @Id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.VehicleTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById" GeneratorSourceName="FillById" GetMethodModifier="Public" GetMethodName="GetDataById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById" UserSourceName="FillById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Description, DailyRate, MinimumAge FROM dbo.VehicleTypes
+WHERE Id = @id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.VehicleTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameters" GeneratorSourceName="FillByParameters" GetMethodModifier="Public" GetMethodName="GetDataByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameters" UserSourceName="FillByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT		Id, Description, DailyRate, MinimumAge
+FROM		VehicleTypes
+WHERE 		(Id = @id OR @id IS NULL or @id&lt;1) 
+AND 		(Description LIKE '%' + @description + '%' OR @description IS NULL OR @description ='')
+AND		(DailyRate BETWEEN @dailyratestart AND @dailyrateend) 
+AND 		(MinimumAge = @minimumage OR @minimumage IS NULL or @minimumage &lt;1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="description" ColumnName="Description" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@description" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyratestart" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyratestart" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="dailyrateend" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@dailyrateend" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="minimumage" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@minimumage" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRecord" Modifier="Public" Name="InsertRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertRecord">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[VehicleTypes] ([Description], [DailyRate], [MinimumAge]) VALUES (@Description, @DailyRate, @MinimumAge)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Description" ColumnName="Description" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DailyRate" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@DailyRate" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MinimumAge" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@MinimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[VehicleTypes] SET [Description] = @Description, [DailyRate] = @DailyRate, [MinimumAge] = @MinimumAge WHERE ([Id] = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Description" ColumnName="Description" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="varchar(128)" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="128" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DailyRate" ColumnName="DailyRate" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@DailyRate" Precision="0" ProviderType="Money" Scale="0" Size="8" SourceColumn="DailyRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MinimumAge" ColumnName="MinimumAge" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@MinimumAge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="MinimumAge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.VehicleTypes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsersAndRolesTableAdapter" GeneratorDataComponentClassName="UsersAndRolesTableAdapter" Name="UsersAndRoles" UserDataComponentName="UsersAndRolesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUsersAndRoles" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetUsersAndRoles" GeneratorSourceName="FillUsersAndRoles" GetMethodModifier="Public" GetMethodName="GetUsersAndRoles" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetUsersAndRoles" UserSourceName="FillUsersAndRoles">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT AspNetUsers.Id AS UserID, AspNetUsers.Email, AspNetUsers.PhoneNumber, 
+AspNetUsers.TwoFactorEnabled, AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, 
+AspNetUsers.AccessFailedCount, AspNetUsers.UserName, 
+
+STUFF ((SELECT ', ' + RoleId AS [text()]
+             FROM             AspNetUserRoles
+             WHERE          (AspNetUsers.Id = UserId)
+             FOR XML PATH('')), 1, 2, '') 
+             AS Roles
+
+FROM AspNetRoles RIGHT OUTER JOIN AspNetUserRoles 
+AS AspNetUserRoles_1 ON AspNetRoles.Id = AspNetUserRoles_1.RoleId RIGHT OUTER JOIN AspNetUsers 
+ON AspNetUserRoles_1.UserId = AspNetUsers.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="TwoFactorEnabled" DataSetColumn="TwoFactorEnabled" />
+              <Mapping SourceColumn="LockoutEndDateUtc" DataSetColumn="LockoutEndDateUtc" />
+              <Mapping SourceColumn="LockoutEnabled" DataSetColumn="LockoutEnabled" />
+              <Mapping SourceColumn="AccessFailedCount" DataSetColumn="AccessFailedCount" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="Roles" DataSetColumn="Roles" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteUserRoleLink" Modifier="Public" Name="DeleteUserRoleLink" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteUserRoleLink">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM AspNetUserRoles
+WHERE        (UserId = @userID) AND (RoleId = @roleID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userID" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleID" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@roleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUserByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUserByID" GeneratorSourceName="FillUserByID" GetMethodModifier="Public" GetMethodName="GetUserByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUserByID" UserSourceName="FillUserByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AccessFailedCount, Email, Id AS UserID, LockoutEnabled, LockoutEndDateUtc, PhoneNumber, TwoFactorEnabled, UserName FROM AspNetUsers WHERE (Id = @userID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userID" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillUserRoles" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUserRoles" GeneratorSourceName="FillUserRoles" GetMethodModifier="Public" GetMethodName="GetUserRoles" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUserRoles" UserSourceName="FillUserRoles">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AspNetUserRoles.UserId, AspNetUserRoles.RoleId, AspNetRoles.Id, AspNetRoles.Name, AspNetUsers.Id AS Expr1, AspNetUsers.Email, AspNetUsers.PhoneNumber, AspNetUsers.TwoFactorEnabled, 
+                         AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, AspNetUsers.AccessFailedCount, AspNetUsers.UserName
+FROM            AspNetRoles INNER JOIN
+                         AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId INNER JOIN
+                         AspNetUsers ON AspNetUserRoles.UserId = AspNetUsers.Id
+WHERE        (AspNetUserRoles.UserId = @uid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="uid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@uid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillUserRolesByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUserRolesByID" GeneratorSourceName="FillUserRolesByID" GetMethodModifier="Public" GetMethodName="GetUserRolesByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUserRolesByID" UserSourceName="FillUserRolesByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AspNetUserRoles.UserId, AspNetUserRoles.RoleId, AspNetRoles.Name
+FROM            AspNetRoles INNER JOIN
+                         AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId
+WHERE        (AspNetUserRoles.UserId = @uid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="uid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@uid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUsers" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUsers" GeneratorSourceName="FillUsers" GetMethodModifier="Public" GetMethodName="GetUsers" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUsers" UserSourceName="FillUsers">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         AspNetUsers.Id AS UserID, AspNetUsers.Email, AspNetUsers.PhoneNumber, AspNetUsers.TwoFactorEnabled, AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, AspNetUsers.AccessFailedCount, 
+                         AspNetUsers.UserName, STUFF
+                             ((SELECT        ', ' + RoleId AS [text()]
+                                 FROM            AspNetUserRoles
+                                 WHERE        (AspNetUsers.Id = UserId) FOR XML PATH('')), 1, 2, '') AS Roles
+FROM            AspNetRoles RIGHT OUTER JOIN
+                         AspNetUserRoles AS AspNetUserRoles_1 ON AspNetRoles.Id = AspNetUserRoles_1.RoleId RIGHT OUTER JOIN
+                         AspNetUsers ON AspNetUserRoles_1.UserId = AspNetUsers.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillUsersByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUsersByParameters" GeneratorSourceName="FillUsersByParameters" GetMethodModifier="Public" GetMethodName="GetUsersByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUsersByParameters" UserSourceName="FillUsersByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AspNetUsers.Id AS UserID, AspNetUsers.Email, AspNetUsers.PhoneNumber, AspNetUsers.TwoFactorEnabled, AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, AspNetUsers.AccessFailedCount, 
+                         AspNetUsers.UserName, AspNetRoles.Id AS RoleID, AspNetRoles.Name
+FROM            AspNetRoles RIGHT OUTER JOIN
+                         AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId RIGHT OUTER JOIN
+                         AspNetUsers ON AspNetUserRoles.UserId = AspNetUsers.Id
+WHERE        (AspNetUsers.Email LIKE '%' + @email + '%' OR
+                         AspNetUsers.Email IS NULL) AND (AspNetUsers.PhoneNumber LIKE '%' + @phoneNumber + '%' OR
+                         AspNetUsers.PhoneNumber IS NULL) AND (AspNetUsers.UserName LIKE '%' + @username + '%' OR
+                         AspNetUsers.UserName IS NULL) AND (AspNetRoles.Id LIKE '%' + @roleID + '%' OR
+                         AspNetRoles.Id IS NULL) AND (AspNetRoles.Name LIKE '%' + @roleName + '%' OR
+                         AspNetRoles.Name IS NULL)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="Email" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="phoneNumber" ColumnName="PhoneNumber" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@phoneNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PhoneNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="username" ColumnName="UserName" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleID" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@roleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleName" ColumnName="Name" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetRoles" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@roleName" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUsersRoleNames" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUsersRoleNames" GeneratorSourceName="FillUsersRoleNames" GetMethodModifier="Public" GetMethodName="GetUsersRoleNames" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUsersRoleNames" UserSourceName="FillUsersRoleNames">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT AspNetUsers.Id AS UserID, AspNetUsers.Email, AspNetUsers.PhoneNumber, 
+AspNetUsers.TwoFactorEnabled, AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, 
+AspNetUsers.AccessFailedCount, AspNetUsers.UserName, 
+
+STUFF ((SELECT ', ' + AspNetRoles.Name AS [text()]
+              FROM            AspNetRoles INNER JOIN AspNetUserRoles 
+              ON                 AspNetUserRoles.RoleId = AspNetRoles.Id
+              WHERE         (AspNetUserRoles.UserId = AspNetUsers.Id) 
+              FOR XML PATH('')), 1, 2, '') 
+              AS Roles
+
+FROM AspNetRoles RIGHT OUTER JOIN AspNetUserRoles 
+AS AspNetUserRoles_1 ON AspNetRoles.Id = AspNetUserRoles_1.RoleId RIGHT OUTER JOIN AspNetUsers 
+ON AspNetUserRoles_1.UserId = AspNetUsers.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillUsersRolesByParameters" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUsersRolesByParameters" GeneratorSourceName="FillUsersRolesByParameters" GetMethodModifier="Public" GetMethodName="GetUsersRolesByParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUsersRolesByParameters" UserSourceName="FillUsersRolesByParameters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT       AspNetUsers.Id AS UserID, AspNetUsers.Email, AspNetUsers.PhoneNumber, AspNetUsers.TwoFactorEnabled, AspNetUsers.LockoutEndDateUtc, AspNetUsers.LockoutEnabled, AspNetUsers.AccessFailedCount, AspNetUsers.UserName,
+
+STUFF ((SELECT ', ' + AspNetRoles.Name AS [text()]
+              FROM            AspNetRoles INNER JOIN AspNetUserRoles 
+              ON                 AspNetUserRoles.RoleId = AspNetRoles.Id
+              WHERE         (AspNetUserRoles.UserId = AspNetUsers.Id) 
+              FOR XML PATH('')), 1, 2, '') 
+              AS Roles
+
+FROM            AspNetRoles RIGHT OUTER JOIN AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId RIGHT OUTER JOIN AspNetUsers ON AspNetUserRoles.UserId = AspNetUsers.Id
+
+WHERE        (AspNetUsers.Email LIKE '%' + @email + '%' OR AspNetUsers.Email IS NULL) 
+AND (AspNetUsers.PhoneNumber LIKE '%' + @phoneNumber + '%' OR AspNetUsers.PhoneNumber IS NULL) AND (AspNetUsers.UserName LIKE '%' + @username + '%' OR AspNetUsers.UserName IS NULL) 
+AND (AspNetRoles.Id LIKE '%' + @roleID + '%' OR AspNetRoles.Id IS NULL) 
+AND (AspNetRoles.Name LIKE '%' + @roleName + '%' OR AspNetRoles.Name IS NULL)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="Email" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="phoneNumber" ColumnName="PhoneNumber" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@phoneNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PhoneNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="username" ColumnName="UserName" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleID" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@roleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleName" ColumnName="Name" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetRoles" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@roleName" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUsers" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetUsersNotDrivers" GetMethodModifier="Public" GetMethodName="GetUsersNotDrivers" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUsersNotDrivers" UserSourceName="GetUsersNotDrivers">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Id AS UserID, Email, UserName, EmailConfirmed, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnabled, AccessFailedCount
+FROM            AspNetUsers
+WHERE        (NOT EXISTS
+                             (SELECT        UserID
+                               FROM            Drivers
+                               WHERE        (UserID = AspNetUsers.Id))) OR
+                         (Id = @userid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userid" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertAndReturnUserID" Modifier="Public" Name="InsertAndReturnUserID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertAndReturnUserID">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO AspNetUsers
+                         (Id, Email, PhoneNumber, UserName, PasswordHash)
+VALUES        (@userID,@email,@phoneNumber,@username,@passwordHash)
+
+SELECT SCOPE_IDENTITY()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertUserRoleLink" Modifier="Public" Name="InsertUserRoleLink" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertUserRoleLink">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO AspNetUserRoles
+                         (UserId, RoleId)
+VALUES        (@userID,@roleID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userID" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@userID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="roleID" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@roleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE	AspNetUsers
+SET	Email = @email, PhoneNumber = @phoneNumber, UserName = @username
+WHERE	(Id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="Email" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="phoneNumber" ColumnName="PhoneNumber" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@phoneNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="PhoneNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="username" ColumnName="UserName" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(256)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="NVarChar" Scale="0" Size="256" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="Id" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUsers" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@id" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RolesTableAdapter" GeneratorDataComponentClassName="RolesTableAdapter" Name="Roles" UserDataComponentName="RolesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetRoles" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[AspNetRoles] WHERE (([Id] = @Original_RoleID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RoleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (@RoleID, @Name)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RoleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id as RoleID, Name FROM dbo.AspNetRoles</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[AspNetRoles] SET [Id] = @RoleID, [Name] = @Name WHERE (([Id] = @Original_RoleID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RoleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RoleID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="RoleID" DataSetColumn="RoleID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserRolesTableAdapter" GeneratorDataComponentClassName="UserRolesTableAdapter" Name="UserRoles" UserDataComponentName="UserRolesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="dbo.AspNetUserRoles" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[AspNetUserRoles] WHERE (([UserId] = @Original_UserId) AND ([RoleId] = @Original_RoleId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (@UserId, @RoleId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UserId, RoleId FROM dbo.AspNetUserRoles</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[AspNetUserRoles] SET [UserId] = @UserId, [RoleId] = @RoleId WHERE (([UserId] = @Original_UserId) AND ([RoleId] = @Original_RoleId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="RoleId" DataSetColumn="RoleId" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountRolesByUserID" Modifier="Public" Name="CountRolesByUserID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CountRolesByUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(AspNetUserRoles.RoleId) AS RoleCount
+FROM            AspNetRoles INNER JOIN
+                         AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId
+WHERE        (AspNetUserRoles.UserId = @uid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="uid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@uid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteRecord" Modifier="Public" Name="DeleteRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteRecord">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [dbo].[AspNetUserRoles] WHERE (([UserId] = @Original_UserId) AND ([RoleId] = @Original_RoleId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@Original_UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_RoleId" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@Original_RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillUserRolesByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetUserRolesByID" GeneratorSourceName="FillUserRolesByID" GetMethodModifier="Public" GetMethodName="GetUserRolesByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUserRolesByID" UserSourceName="FillUserRolesByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AspNetUserRoles.UserId, AspNetUserRoles.RoleId, AspNetRoles.Name
+FROM            AspNetRoles INNER JOIN
+                         AspNetUserRoles ON AspNetRoles.Id = AspNetUserRoles.RoleId
+WHERE        (AspNetUserRoles.UserId = @uid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="uid" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@uid" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRecord" Modifier="Public" Name="InsertRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertRecord">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (@UserId, @RoleId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="RoleId" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="aspnet_BangersAndCo_20190102034917ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateRecord" Modifier="Public" Name="UpdateRecord" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateRecord">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[AspNetUserRoles] SET [UserId] = @UserId, [RoleId] = @RoleId WHERE (([UserId] = @Original_UserId) AND ([RoleId] = @Original_RoleId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="RoleId" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_UserId" ColumnName="UserId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@Original_UserId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_RoleId" ColumnName="RoleId" DataSourceName="[aspnet-BangersAndCo-20190102034917].dbo.AspNetUserRoles" DataTypeServer="nvarchar(128)" DbType="String" Direction="Input" ParameterName="@Original_RoleId" Precision="0" ProviderType="NVarChar" Scale="0" Size="128" SourceColumn="RoleId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataAccessLayer" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataAccessLayer" msprop:Generator_UserDSName="DataAccessLayer">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bookings" msprop:Generator_TableClassName="BookingsDataTable" msprop:Generator_TableVarName="tableBookings" msprop:Generator_TablePropName="Bookings" msprop:Generator_RowDeletingName="BookingsRowDeleting" msprop:Generator_RowChangingName="BookingsRowChanging" msprop:Generator_RowEvHandlerName="BookingsRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingsRowDeleted" msprop:Generator_UserTableName="Bookings" msprop:Generator_RowChangedName="BookingsRowChanged" msprop:Generator_RowEvArgName="BookingsRowChangeEvent" msprop:Generator_RowClassName="BookingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleId" msprop:Generator_ColumnVarNameInTable="columnVehicleId" msprop:Generator_ColumnPropNameInRow="VehicleId" msprop:Generator_ColumnPropNameInTable="VehicleIdColumn" msprop:Generator_UserColumnName="VehicleId" type="xs:int" />
+              <xs:element name="DateTimeFrom" msprop:Generator_ColumnVarNameInTable="columnDateTimeFrom" msprop:Generator_ColumnPropNameInRow="DateTimeFrom" msprop:Generator_ColumnPropNameInTable="DateTimeFromColumn" msprop:Generator_UserColumnName="DateTimeFrom" type="xs:dateTime" />
+              <xs:element name="DateTimeDue" msprop:Generator_ColumnVarNameInTable="columnDateTimeDue" msprop:Generator_ColumnPropNameInRow="DateTimeDue" msprop:Generator_ColumnPropNameInTable="DateTimeDueColumn" msprop:Generator_UserColumnName="DateTimeDue" type="xs:dateTime" />
+              <xs:element name="DateTimePickup" msprop:Generator_ColumnVarNameInTable="columnDateTimePickup" msprop:Generator_ColumnPropNameInRow="DateTimePickup" msprop:Generator_ColumnPropNameInTable="DateTimePickupColumn" msprop:Generator_UserColumnName="DateTimePickup" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateTimeReturn" msprop:Generator_ColumnVarNameInTable="columnDateTimeReturn" msprop:Generator_ColumnPropNameInRow="DateTimeReturn" msprop:Generator_ColumnPropNameInTable="DateTimeReturnColumn" msprop:Generator_UserColumnName="DateTimeReturn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DailyRateCharged" msprop:Generator_ColumnVarNameInTable="columnDailyRateCharged" msprop:Generator_ColumnPropNameInRow="DailyRateCharged" msprop:Generator_ColumnPropNameInTable="DailyRateChargedColumn" msprop:Generator_UserColumnName="DailyRateCharged" type="xs:decimal" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistrationPlate" msprop:Generator_ColumnVarNameInTable="columnRegistrationPlate" msprop:Generator_ColumnPropNameInRow="RegistrationPlate" msprop:Generator_ColumnPropNameInTable="RegistrationPlateColumn" msprop:Generator_UserColumnName="RegistrationPlate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleTypeId" msprop:Generator_ColumnVarNameInTable="columnVehicleTypeId" msprop:Generator_ColumnPropNameInRow="VehicleTypeId" msprop:Generator_ColumnPropNameInTable="VehicleTypeIdColumn" msprop:Generator_UserColumnName="VehicleTypeId" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DailyRate" msprop:Generator_ColumnVarNameInTable="columnDailyRate" msprop:Generator_ColumnPropNameInRow="DailyRate" msprop:Generator_ColumnPropNameInTable="DailyRateColumn" msprop:Generator_UserColumnName="DailyRate" type="xs:decimal" />
+              <xs:element name="MinimumAge" msprop:Generator_ColumnVarNameInTable="columnMinimumAge" msprop:Generator_ColumnPropNameInRow="MinimumAge" msprop:Generator_ColumnPropNameInTable="MinimumAgeColumn" msprop:Generator_UserColumnName="MinimumAge" type="xs:unsignedByte" />
+              <xs:element name="Transmission" msprop:Generator_ColumnVarNameInTable="columnTransmission" msprop:Generator_ColumnPropNameInRow="Transmission" msprop:Generator_ColumnPropNameInTable="TransmissionColumn" msprop:Generator_UserColumnName="Transmission" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FuelType" msprop:Generator_ColumnVarNameInTable="columnFuelType" msprop:Generator_ColumnPropNameInRow="FuelType" msprop:Generator_ColumnPropNameInTable="FuelTypeColumn" msprop:Generator_UserColumnName="FuelType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Drivers" msprop:Generator_TableClassName="DriversDataTable" msprop:Generator_TableVarName="tableDrivers" msprop:Generator_TablePropName="Drivers" msprop:Generator_RowDeletingName="DriversRowDeleting" msprop:Generator_RowChangingName="DriversRowChanging" msprop:Generator_RowEvHandlerName="DriversRowChangeEventHandler" msprop:Generator_RowDeletedName="DriversRowDeleted" msprop:Generator_UserTableName="Drivers" msprop:Generator_RowChangedName="DriversRowChanged" msprop:Generator_RowEvArgName="DriversRowChangeEvent" msprop:Generator_RowClassName="DriversRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Forename" msprop:Generator_ColumnVarNameInTable="columnForename" msprop:Generator_ColumnPropNameInRow="Forename" msprop:Generator_ColumnPropNameInTable="ForenameColumn" msprop:Generator_UserColumnName="Forename">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Surname" msprop:Generator_ColumnVarNameInTable="columnSurname" msprop:Generator_ColumnPropNameInRow="Surname" msprop:Generator_ColumnPropNameInTable="SurnameColumn" msprop:Generator_UserColumnName="Surname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" />
+              <xs:element name="Address1" msprop:Generator_ColumnVarNameInTable="columnAddress1" msprop:Generator_ColumnPropNameInRow="Address1" msprop:Generator_ColumnPropNameInTable="Address1Column" msprop:Generator_UserColumnName="Address1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address2" msprop:Generator_ColumnVarNameInTable="columnAddress2" msprop:Generator_ColumnPropNameInRow="Address2" msprop:Generator_ColumnPropNameInTable="Address2Column" msprop:Generator_UserColumnName="Address2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="County" msprop:Generator_ColumnVarNameInTable="columnCounty" msprop:Generator_ColumnPropNameInRow="County" msprop:Generator_ColumnPropNameInTable="CountyColumn" msprop:Generator_UserColumnName="County" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostCode" msprop:Generator_ColumnVarNameInTable="columnPostCode" msprop:Generator_ColumnPropNameInRow="PostCode" msprop:Generator_ColumnPropNameInTable="PostCodeColumn" msprop:Generator_UserColumnName="PostCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent" msprop:Generator_RowClassName="VehiclesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="RegistrationPlate" msprop:Generator_ColumnVarNameInTable="columnRegistrationPlate" msprop:Generator_ColumnPropNameInRow="RegistrationPlate" msprop:Generator_ColumnPropNameInTable="RegistrationPlateColumn" msprop:Generator_UserColumnName="RegistrationPlate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transmission" msprop:Generator_ColumnVarNameInTable="columnTransmission" msprop:Generator_ColumnPropNameInRow="Transmission" msprop:Generator_ColumnPropNameInTable="TransmissionColumn" msprop:Generator_UserColumnName="Transmission" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FuelType" msprop:Generator_ColumnVarNameInTable="columnFuelType" msprop:Generator_ColumnPropNameInRow="FuelType" msprop:Generator_ColumnPropNameInTable="FuelTypeColumn" msprop:Generator_UserColumnName="FuelType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DailyRate" msprop:Generator_ColumnVarNameInTable="columnDailyRate" msprop:Generator_ColumnPropNameInRow="DailyRate" msprop:Generator_ColumnPropNameInTable="DailyRateColumn" msprop:Generator_UserColumnName="DailyRate" type="xs:decimal" />
+              <xs:element name="MinimumAge" msprop:Generator_ColumnVarNameInTable="columnMinimumAge" msprop:Generator_ColumnPropNameInRow="MinimumAge" msprop:Generator_ColumnPropNameInTable="MinimumAgeColumn" msprop:Generator_UserColumnName="MinimumAge" type="xs:unsignedByte" />
+              <xs:element name="VehicleTypeId" msprop:Generator_ColumnVarNameInTable="columnVehicleTypeId" msprop:Generator_ColumnPropNameInRow="VehicleTypeId" msprop:Generator_ColumnPropNameInTable="VehicleTypeIdColumn" msprop:Generator_UserColumnName="VehicleTypeId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VehicleTypes" msprop:Generator_TableClassName="VehicleTypesDataTable" msprop:Generator_TableVarName="tableVehicleTypes" msprop:Generator_RowChangedName="VehicleTypesRowChanged" msprop:Generator_TablePropName="VehicleTypes" msprop:Generator_RowDeletingName="VehicleTypesRowDeleting" msprop:Generator_RowChangingName="VehicleTypesRowChanging" msprop:Generator_RowEvHandlerName="VehicleTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehicleTypesRowDeleted" msprop:Generator_RowClassName="VehicleTypesRow" msprop:Generator_UserTableName="VehicleTypes" msprop:Generator_RowEvArgName="VehicleTypesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DailyRate" msprop:Generator_ColumnVarNameInTable="columnDailyRate" msprop:Generator_ColumnPropNameInRow="DailyRate" msprop:Generator_ColumnPropNameInTable="DailyRateColumn" msprop:Generator_UserColumnName="DailyRate" type="xs:decimal" />
+              <xs:element name="MinimumAge" msprop:Generator_ColumnVarNameInTable="columnMinimumAge" msprop:Generator_ColumnPropNameInRow="MinimumAge" msprop:Generator_ColumnPropNameInTable="MinimumAgeColumn" msprop:Generator_UserColumnName="MinimumAge" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UsersAndRoles" msprop:Generator_TableClassName="UsersAndRolesDataTable" msprop:Generator_TableVarName="tableUsersAndRoles" msprop:Generator_TablePropName="UsersAndRoles" msprop:Generator_RowDeletingName="UsersAndRolesRowDeleting" msprop:Generator_RowChangingName="UsersAndRolesRowChanging" msprop:Generator_RowEvHandlerName="UsersAndRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersAndRolesRowDeleted" msprop:Generator_UserTableName="UsersAndRoles" msprop:Generator_RowChangedName="UsersAndRolesRowChanged" msprop:Generator_RowEvArgName="UsersAndRolesRowChangeEvent" msprop:Generator_RowClassName="UsersAndRolesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TwoFactorEnabled" msprop:Generator_ColumnVarNameInTable="columnTwoFactorEnabled" msprop:Generator_ColumnPropNameInRow="TwoFactorEnabled" msprop:Generator_ColumnPropNameInTable="TwoFactorEnabledColumn" msprop:Generator_UserColumnName="TwoFactorEnabled" type="xs:boolean" />
+              <xs:element name="LockoutEndDateUtc" msprop:Generator_ColumnVarNameInTable="columnLockoutEndDateUtc" msprop:Generator_ColumnPropNameInRow="LockoutEndDateUtc" msprop:Generator_ColumnPropNameInTable="LockoutEndDateUtcColumn" msprop:Generator_UserColumnName="LockoutEndDateUtc" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LockoutEnabled" msprop:Generator_ColumnVarNameInTable="columnLockoutEnabled" msprop:Generator_ColumnPropNameInRow="LockoutEnabled" msprop:Generator_ColumnPropNameInTable="LockoutEnabledColumn" msprop:Generator_UserColumnName="LockoutEnabled" type="xs:boolean" />
+              <xs:element name="AccessFailedCount" msprop:Generator_ColumnVarNameInTable="columnAccessFailedCount" msprop:Generator_ColumnPropNameInRow="AccessFailedCount" msprop:Generator_ColumnPropNameInTable="AccessFailedCountColumn" msprop:Generator_UserColumnName="AccessFailedCount" type="xs:int" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Roles" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRoles" msprop:Generator_ColumnPropNameInRow="Roles" msprop:Generator_ColumnPropNameInTable="RolesColumn" msprop:Generator_UserColumnName="Roles" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Roles" msprop:Generator_TableClassName="RolesDataTable" msprop:Generator_TableVarName="tableRoles" msprop:Generator_RowChangedName="RolesRowChanged" msprop:Generator_TablePropName="Roles" msprop:Generator_RowDeletingName="RolesRowDeleting" msprop:Generator_RowChangingName="RolesRowChanging" msprop:Generator_RowEvHandlerName="RolesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolesRowDeleted" msprop:Generator_RowClassName="RolesRow" msprop:Generator_UserTableName="Roles" msprop:Generator_RowEvArgName="RolesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoleID" msprop:Generator_ColumnVarNameInTable="columnRoleID" msprop:Generator_ColumnPropNameInRow="RoleID" msprop:Generator_ColumnPropNameInTable="RoleIDColumn" msprop:Generator_UserColumnName="RoleID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserRoles" msprop:Generator_TableClassName="UserRolesDataTable" msprop:Generator_TableVarName="tableUserRoles" msprop:Generator_RowChangedName="UserRolesRowChanged" msprop:Generator_TablePropName="UserRoles" msprop:Generator_RowDeletingName="UserRolesRowDeleting" msprop:Generator_RowChangingName="UserRolesRowChanging" msprop:Generator_RowEvHandlerName="UserRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRolesRowDeleted" msprop:Generator_RowClassName="UserRolesRow" msprop:Generator_UserTableName="UserRoles" msprop:Generator_RowEvArgName="UserRolesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoleId" msprop:Generator_ColumnVarNameInTable="columnRoleId" msprop:Generator_ColumnPropNameInRow="RoleId" msprop:Generator_ColumnPropNameInTable="RoleIdColumn" msprop:Generator_UserColumnName="RoleId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Bookings" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Drivers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Drivers" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="Vehicles_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Vehicles" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="VehicleTypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VehicleTypes" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="UsersAndRoles_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UsersAndRoles" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="Roles_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Roles" />
+      <xs:field xpath="mstns:RoleID" />
+    </xs:unique>
+    <xs:unique name="UserRoles_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserRoles" />
+      <xs:field xpath="mstns:UserId" />
+      <xs:field xpath="mstns:RoleId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Bookings_Vehicles" msdata:parent="Vehicles" msdata:child="Bookings" msdata:parentkey="Id" msdata:childkey="VehicleId" msprop:Generator_UserChildTable="Bookings" msprop:Generator_ChildPropName="GetBookingsRows" msprop:Generator_UserRelationName="FK_Bookings_Vehicles" msprop:Generator_RelationVarName="relationFK_Bookings_Vehicles" msprop:Generator_UserParentTable="Vehicles" msprop:Generator_ParentPropName="VehiclesRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
